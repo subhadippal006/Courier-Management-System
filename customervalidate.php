@@ -1,36 +1,23 @@
-<?php
-  
-include_once('connection.php');
-   
-function test_input($data) {
+<?php      
+    include('connectxyz.php');  
+    $customername = $_POST['customername'];  
+    $password = $_POST['password'];  
       
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-}
-   
-if ($_SERVER["REQUEST_METHOD"]== "POST") {
+        //to prevent from mysqli injection  
+        $customername = stripcslashes($customername);  
+        $password = stripcslashes($password);  
+        $customername = mysqli_real_escape_string($connection, $customername);  
+        $password = mysqli_real_escape_string($connection, $password);  
       
-    $adminname = test_input($_POST["customername"]);
-    $password = test_input($_POST["password"]);
-    $stmt = $conn->prepare("SELECT * FROM customerlogin");
-    $stmt->execute();
-    $users = $stmt->fetchAll();
-      
-    foreach($users as $user) {
+        $sql = "select *from customerlogin where customername = '$customername' and password = '$password'";  
+        $result = mysqli_query($connection, $sql);  
+        $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
+        $count = mysqli_num_rows($result);  
           
-        if(($user['customername'] == $adminname) && 
-            ($user['password'] == $password)) {
-                header("Location: customer.php");
-        }
-        else {
-            echo "<script language='javascript'>";
-            echo "alert('WRONG INFORMATION')";
-            echo "</script>";
-            die();
-        }
-    }
-}
-  
-?>
+        if($count == 1){  
+            header("Location: customer.php"); 
+        }  
+        else{  
+            echo "<h1> Login failed. Invalid username or password.</h1>";  
+        }     
+?>  

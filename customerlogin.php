@@ -51,7 +51,7 @@
                      name="login" value="Sign In">
         </div>
     </form>
-	<div id="bottom"><h3>Don't have an account..Then click on register <button type="submit"  class="button2" button onclick="document.location='#' ">Register</button></h3><div>
+	<div id="bottom"><h3>Don't have an account..Then click on register <button type="submit"  class="button2" button onclick="document.location='cusregister.html' ">Register</button></h3><div>
 </body>
   
 </html>
