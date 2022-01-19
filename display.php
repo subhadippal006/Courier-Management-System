@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
- <title></title>
+<title></title>
 
  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -88,7 +88,7 @@
  <div class="container">
  <div class="col-lg-12">
  <br><br>
- <h1 class="text-warning text-center" > Display Table Data </h1>
+ <h1 class="text-warning text-center" > Staff Details </h1>
  <br>
  <table  id="tabledata" class=" table table-striped table-hover table-bordered">
  

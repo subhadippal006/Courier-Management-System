@@ -2,6 +2,27 @@
 <html lang="en">
   
 <head>
+<style>
+.button2 {
+  background-color:#000080;
+  border: none;
+  color: white;
+  padding: 4px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+#bottom{
+      position:absolute;
+      bottom:0;
+      left:400px;
+  }
+ 
+
+</style>
     <meta charset="UTF-8">
     <link rel="stylesheet" href=
 "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -30,15 +51,18 @@
   
             <input class="button" type="submit"
                      name="login" value="Sign In">
+                     </form>
+                     
         </div>
-    </form>
-        <div>
-        <h2>Not Admin ? Then click on Customer !</h2>
-        <form action="customerlogin.php" method="post">
-            <input type="submit" name="Customer" 
-                class="button" value="Customer"/>
-        </form>
-        </div>
+    
+        <div id="bottom"><h3>Not admin? Then click on Customer <button type="submit"  class="button2" button onclick="document.location='customerlogin.php' ">Customer</button></h3></div>
+    
+ 
+    
 </body>
+
+
+
+
   
 </html>
