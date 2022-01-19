@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 16, 2022 at 05:17 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.5
+-- Generation Time: Jan 19, 2022 at 11:01 AM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -69,6 +69,25 @@ CREATE TABLE `courierdetails` (
 INSERT INTO `courierdetails` (`bid`, `date`, `name`, `phnumber`, `address`, `pincode`, `courierweight`, `couriertype`, `cournum`, `amount`, `rname`, `rphnumber`, `address2`) VALUES
 (7, '2022-01-16 20:28:00', 'srujan', '7894561230', 'abcd', '560064', '2kg', 'nnn', 111, '200', 'Virat', '9638527410', 'zzz'),
 (8, '2022-01-18 21:38:00', 'Vikas', '7411118880', 'Bidar', '585401', '5kg', 'dtc', 112, '300', 'John', '7418523690', 'Bangalore');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customerlogin`
+--
+
+CREATE TABLE `customerlogin` (
+  `cid` int(100) NOT NULL,
+  `customername` text NOT NULL,
+  `password` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `customerlogin`
+--
+
+INSERT INTO `customerlogin` (`cid`, `customername`, `password`) VALUES
+(1, 'customer', 'customer');
 
 -- --------------------------------------------------------
 
@@ -158,6 +177,12 @@ ALTER TABLE `courierdetails`
   ADD UNIQUE KEY `cournum` (`cournum`);
 
 --
+-- Indexes for table `customerlogin`
+--
+ALTER TABLE `customerlogin`
+  ADD PRIMARY KEY (`cid`);
+
+--
 -- Indexes for table `deliverydetails`
 --
 ALTER TABLE `deliverydetails`
@@ -191,6 +216,12 @@ ALTER TABLE `adminlogin`
 --
 ALTER TABLE `courierdetails`
   MODIFY `bid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `customerlogin`
+--
+ALTER TABLE `customerlogin`
+  MODIFY `cid` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `deliverydetails`

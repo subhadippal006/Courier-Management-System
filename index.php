@@ -32,6 +32,13 @@
                      name="login" value="Sign In">
         </div>
     </form>
+        <div>
+        <h2>Not Admin ? Then click on Customer !</h2>
+        <form action="customerlogin.php" method="post">
+            <input type="submit" name="Customer" 
+                class="button" value="Customer"/>
+        </form>
+        </div>
 </body>
   
 </html>
